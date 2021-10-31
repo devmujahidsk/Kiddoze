@@ -1,0 +1,285 @@
+/*
+Project: Kiddoze
+Author: Makemelive Technologies
+*/
+
+
+@font-face {
+    font-family: 'gothamblack';
+    src: url('../fonts/gotham-black-webfont.woff2') format('woff2'), url('../fonts/gotham-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'gothambold';
+    src: url('../fonts/gothambold-webfont.woff2') format('woff2'), url('../fonts/gothambold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'gothammedium';
+    src: url('../fonts/gothammedium-webfont.woff2') format('woff2'), url('../fonts/gothammedium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'gothambook';
+    src: url('../fonts/gothambook-webfont.woff2') format('woff2'), url('../fonts/gothambook-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'candy_textureregular';
+    src: url('../fonts/candy_texture-webfont.woff2') format('woff2'),
+     url('../fonts/candy_texture-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'gothamlight';
+    src: url('../fonts/gothamlight-webfont.woff2') format('woff2'), url('../fonts/gothamlight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'gotham_htfultra';
+    src: url('../fonts/gothamhtf-ultra_0-webfont.woff2') format('woff2'),
+         url('../fonts/gothamhtf-ultra_0-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*Reset CSS*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    overflow-x: hidden;
+    margin: 0;
+    font-family: 'gothammedium';
+    scroll-behavior: smooth;
+    font-smooth: always;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*Wrapper*/
+#page-bg {
+    position: relative;
+}
+#page-bg::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url('../images/Banners/Mountains.png');
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+#sequence {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+}
+main {
+    transition: all .8s ease-in-out;
+}
+
+img {
+  max-width: 100%;
+}
+
+.background {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow: hidden;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    height: 110vh;
+    position: absolute;
+    width: 100%;
+}
+.background {
+    transition: all 1.5s cubic-bezier(.62,.07,.02,1.1);
+}
+
+.background:first-child {
+    transform: translateY(0vh);
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  min-height: 100px;
+  z-index: 1;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+  padding-top: 50px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+.section-bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.preload {
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+  transition: height .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.preload.show {
+  height: 100%;
+}
+
+.preload .content {
+  width: 500px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 270px;
+  
+}
+
+.pre-logo {
+  animation: tada 2s infinite linear;
+  width: 150px;
+}
+
+.slider-bg .slick-dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: -4em;
+  width: 100%;
+}
+.slider-bg .slick-dots li{
+  background: #fff;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  font-size: 0;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.slider-bg .slick-dots li.slick-active {
+   opacity: 0.4;
+}
+.slider-bg .slick-dots li button {
+  height: 1px;
+  width: 1px;
+  background: transparent;
+  border: 0;
+  font-size: 0;
+  opacity: 0;
+}
+.slider-bg .slider-nav {
+   display: none;
+}
+
+@keyframes tada {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    -ms-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    -ms-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    -ms-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
